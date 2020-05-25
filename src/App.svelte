@@ -10,7 +10,7 @@
 
 <style>
 	h1 {
-		color: purple;
+		color: rgb(167, 54, 167);
 	}
 </style>
 
