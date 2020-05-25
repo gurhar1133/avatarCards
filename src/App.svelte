@@ -12,10 +12,13 @@
 	h1 {
 		color: rgb(167, 54, 167);
 	}
+	p {
+		color: rgb(167, 54, 167);
+	}
 </style>
 
 <h1>
-	Hello, my name is {name}!!?
+	Hello, my name is {name}!!
 </h1>
 <div>
 	{div} mc doodoo
