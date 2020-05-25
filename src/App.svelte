@@ -15,10 +15,10 @@
 </style>
 
 <h1>
-	Hello, my name is {name}!
+	Hello, my name is {name}!!?
 </h1>
 <div>
-	{div}
+	{div} mc doodoo
 	<p>I am {age} years old</p>
 	<button on:click="{incAge}">Change age</button>
 </div>
