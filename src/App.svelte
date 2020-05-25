@@ -3,8 +3,39 @@
 	export let div;
 	export let age;
 
+	// $: variables dynamically update
+	const log = (varName)=>{
+		console.log(varName);
+	};
+
+	$: Uname = name.toUpperCase();
+	// think how useful $: obj.update(data)
+	// or $: updateUI(data) could be
+
+	$: log(name);
+
+	// you can even use this guy with conditionals
+	$: if (name === "Gurhar"){
+		age = 27;
+	}
+
 	const incAge = ()=>{
 		age += 1;
+	};
+
+	// since this is event listener function
+	const nameInput = (event) => {
+		name = event.target.value;
+	};
+
+	const changeName = ()=>{
+		if (name === "Gurhar"){
+			name = "Harbo Bear";
+		}
+		else {
+			name = "Gurhar"
+		}
+		
 	};
 </script>
 
@@ -18,11 +49,19 @@
 </style>
 
 <h1>
-	Hello, my name is {name}!!
+	Hello, my name is {Uname}!!
 </h1>
 <div>
-	{div} mc doodoo
+	
 	<p>I am {age} years old</p>
-	<button on:click="{incAge}">Change age</button>
+	<button on:click="{incAge}">Make Older</button>
+	<!-- setting up a connection between input
+	and name. setting up an event listener
+	on:input"{var}". This listens to keystroke 
+	changes. Below we have a two way binding -->
+	
+	<input type="text" value="{name}" on:input="{nameInput}">
+	
+	
 </div>
 
