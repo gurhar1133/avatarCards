@@ -43,6 +43,9 @@
     height: 100%;
    
   }
+  .thumb-placeholder{
+      background: #ccc;
+  }
 
   img {
     width: 100%;
@@ -80,7 +83,9 @@
 </style>
 <div class="contact-card">
     <header>
-        <div class="thumb">
+    <!-- you can dynamically alter classes with ternary operator 
+        in curly braces-->
+        <div class="{image ? "thumb" : "thumb thumb-placeholder"}">
         
              <img src="{image}" alt="{userName}"/>
         </div>
