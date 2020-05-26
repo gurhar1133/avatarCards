@@ -1,7 +1,8 @@
 <script>
 	export let name;
-	export let div;
 	export let age;
+
+	import ContactCard from './ContactCard.svelte';
 
 	// $: variables dynamically update
 	const log = (varName)=>{
@@ -21,11 +22,6 @@
 
 	const incAge = ()=>{
 		age += 1;
-	};
-
-	// since this is event listener function
-	const nameInput = (event) => {
-		name = event.target.value;
 	};
 
 	const changeName = ()=>{
@@ -51,17 +47,18 @@
 <h1>
 	Hello, my name is {Uname}!!
 </h1>
-<div>
+
 	
-	<p>I am {age} years old</p>
-	<button on:click="{incAge}">Make Older</button>
-	<!-- setting up a connection between input
+<p>I am {age} years old</p>
+<button on:click="{incAge}">Make Older</button>
+<!-- setting up a connection between input
 	and name. setting up an event listener
 	on:input"{var}". This listens to keystroke 
 	changes. Below we have a two way binding -->
 	
-	<input type="text" value="{name}" on:input="{nameInput}">
-	
-	
-</div>
+<input type="text" bind:value="{name}">
+
+<!---->
+<ContactCard userName="{name}"/>
+
 
