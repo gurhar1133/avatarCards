@@ -1,9 +1,11 @@
 <script>
+	export let defaultImage;
 	export let name;
-	export let age;
-
+	export let title;
+	export let description;
+	export let nations;
+	export let icon = nations["fire"];
 	import ContactCard from './ContactCard.svelte';
-
 	// $: variables dynamically update
 	const log = (varName)=>{
 		console.log(varName);
@@ -16,49 +18,61 @@
 	$: log(name);
 
 	// you can even use this guy with conditionals
-	$: if (name === "Gurhar"){
-		age = 27;
-	}
-
-	const incAge = ()=>{
-		age += 1;
+	const changeNation = (event)=>{
+		console.log(event.target.value);
+		icon = nations[event.target.value];
 	};
 
-	const changeName = ()=>{
-		if (name === "Gurhar"){
-			name = "Harbo Bear";
-		}
-		else {
-			name = "Gurhar"
-		}
-		
-	};
 </script>
 
 <style>
 	h1 {
 		color: rgb(167, 54, 167);
+		position: absolute;
+		right: 25%;
 	}
-	p {
+	h3 {
 		color: rgb(167, 54, 167);
 	}
+	
 </style>
 
 <h1>
-	Hello, my name is {Uname}!!
+	Hello, {Uname}!!
 </h1>
 
-	
-<p>I am {age} years old</p>
-<button on:click="{incAge}">Make Older</button>
+<h3>Welcome to Avatar card builder</h3>
+
 <!-- setting up a connection between input
 	and name. setting up an event listener
 	on:input"{var}". This listens to keystroke 
 	changes. Below we have a two way binding -->
-	
+Choose Nation:<br>
+<select name="nation"  id="selectNation" on:change="{changeNation}">
+	<option value="fire">Fire</option>
+	<option value="water">Water</option>
+	<option value="air">Air</option>
+	<option value="earth">Earth</option>
+</select>
+<br>Name:<br>	
 <input type="text" bind:value="{name}">
+<br>
+Title:<br>
+<input type="text" bind:value="{title}">
+<br>
+Short bio:<br>
+<textarea rows="3" bind:value="{description}"></textarea>
+<br>
+<label for="imageURL">Image url</label>
+<input name="imageURL" type="text" bind:value="{defaultImage}">
+<br>
 
 <!---->
-<ContactCard userName="{name}"/>
+<ContactCard 
+		image="{defaultImage}" 
+		userName="{name}" 
+		userTitle="{title}" 
+		userDesc="{description}"
+		nationImg="{icon}"/>
 
 

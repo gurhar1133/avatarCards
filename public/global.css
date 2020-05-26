@@ -19,6 +19,7 @@ body {
   background: #f3f3f3;
 }
 
+
 button {
   font: inherit;
   border: 1px solid #cf0056;
@@ -28,6 +29,21 @@ button {
   border-radius: 5px;
   box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.26);
   cursor: pointer;
+}
+
+input{
+	width: 200px;
+	height: 30px;
+	border: 1px solid #e40763;
+	border-radius: 5px;
+	margin: 4px 4px;
+}
+
+textarea{
+	border: 1px solid #e40763;
+	border-radius: 5px;
+	margin: 4px 4px;
+	width: 250px;
 }
 
 button:hover,

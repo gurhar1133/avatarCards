@@ -3,6 +3,10 @@
     // of the component. in this case, the App 
     // component
     export let userName;
+    export let userTitle;
+    export let userDesc;
+    export let image;
+    export let nationImg;
 </script>
 <style>
 .contact-card {
@@ -10,7 +14,22 @@
     max-width: 30rem;
     border-radius: 5px;
     margin: 1rem 0;
+    position: absolute;
+    top: 15%;
+    right: 7%;
   }
+.nation{
+    max-width: 50px;
+    max-height: 50px;
+    position: absolute;
+    top: 10%;
+    right: 10%;
+}
+.contact-card:hover{
+    transform: rotate(1deg);
+    transition: transform .5s;
+    cursor: pointer;
+}
 
   header {
     display: flex;
@@ -37,6 +56,7 @@
     display: flex;
     flex-direction: column;
     justify-content: center;
+    margin-left: 30px;
   }
 
   h1 {
@@ -62,15 +82,16 @@
     <header>
         <div class="thumb">
         
-             <img src="" alt=""/>
+             <img src="{image}" alt="{userName}"/>
         </div>
         <div class="user-data">
             <h1>{userName}</h1>
-            <h2>Title</h2>
+            <span class="nation"><img src="{nationImg}" alt="nation"></span>
+            <h2><strong>{userTitle}</strong></h2>
         </div>
         
     </header>
     <div class="description">
-        <p>Short description</p>
+        <p>{userDesc}</p>
     </div>
 </div>
