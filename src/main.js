@@ -4,10 +4,10 @@ import App from './App.svelte';
 const app = new App({
 	target: document.body,
 	props: {
-		name: 'Ozai',
-		title: "Firelord",
-		description: "I am the King of the Fire nation",
-		defaultImage: "https://vignette.wikia.nocookie.net/avatar/images/4/4a/Ozai.png/revision/latest/top-crop/width/360/height/360?cb=20130612170743",
+		name: 'Uncle Iroh',
+		title: "Dragon of the West",
+		description: "I am the firelord's brother and I love tea",
+		defaultImage: "https://static2.cbrimages.com/wordpress/wp-content/uploads/2019/07/avatar-uncle-iroh-3.jpeg",
 		nations: {
 			'earth': "https://png2.cleanpng.com/sh/68e998e92987c9fe42521b07dfdf99c6/L0KzQYm3VME5N51BfZH0aYP2gLBuTgNwc5xmRet4dYT4cra0lP9xcF5nfdtvb37qPbbokwRpNaRAhdR4bD3ndbTojL02aZU8TtdrZknpR4PsUL4yO2M2TKU7M0G4QoW3VsgxO2I7TaU6LoDxd1==/kisspng-sokka-youtube-toph-beifong-earth-symbol-decal-5ad76ebf9f72e0.1321432315240680316531.png",
 		 	'fire':"https://png2.cleanpng.com/sh/c58348a24e2fb3f9dfc8dffe9a68a2ec/L0KzQYm3U8E6N5h4fZH0aYP2gLBuTftifJJ3eZ98b3vucX7ogf5oNZx0iuRqLXbsgra0jvF1cZDzRdDqdHnyfn7qjPlxaaN5i58AYXHpdrXqhcJnOZI4UJC5NUO1Q4W9UcE2OmI5UKU7MUS0SYS1kP5o/kisspng-katara-sokka-aang-korra-fire-nation-nation-cliparts-5aaffdce2f1a38.053234611521483214193.png",
