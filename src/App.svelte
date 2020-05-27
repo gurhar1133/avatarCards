@@ -4,7 +4,7 @@
 	export let title;
 	export let description;
 	export let nations;
-	export let icon = nations["fire"];
+	export let icon = nations["water"];
 	import ContactCard from './ContactCard.svelte';
 	// $: variables dynamically update
 	const log = (varName)=>{
