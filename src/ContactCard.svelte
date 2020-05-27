@@ -14,9 +14,6 @@
     max-width: 30rem;
     border-radius: 5px;
     margin: 1rem 0;
-    position: absolute;
-    top: 15%;
-    right: 7%;
   }
 .nation{
     max-width: 50px;

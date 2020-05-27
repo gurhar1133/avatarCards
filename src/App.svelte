@@ -34,7 +34,11 @@
 	h3 {
 		color: rgb(167, 54, 167);
 	}
-	
+	.contact-div{
+		position: absolute;
+    	top: 15%;
+    	right: 7%;
+	}
 </style>
 
 <h1>
@@ -67,12 +71,15 @@ Short bio:<br>
 <input name="imageURL" type="text" bind:value="{defaultImage}">
 <br>
 
-<!---->
-<ContactCard 
-		image="{defaultImage}" 
-		userName="{name}" 
-		userTitle="{title}" 
-		userDesc="{description}"
-		nationImg="{icon}"/>
+<div class="contact-div">
+	<!---->
+	<ContactCard 
+			image="{defaultImage}" 
+			userName="{name}" 
+			userTitle="{title}" 
+			userDesc="{description}"
+			nationImg="{icon}"/>
+</div>
+
 
 
