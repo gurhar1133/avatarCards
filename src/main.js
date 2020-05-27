@@ -5,7 +5,7 @@ const app = new App({
 	target: document.body,
 	props: {
 		name: 'Uncle Iroh',
-		title: "Dragon of the West",
+		title: "The Dragon of the West",
 		description: "I am the firelord's brother and I love tea",
 		defaultImage: "https://static2.cbrimages.com/wordpress/wp-content/uploads/2019/07/avatar-uncle-iroh-3.jpeg",
 		nations: {
