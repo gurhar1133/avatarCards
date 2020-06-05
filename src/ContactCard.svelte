@@ -2,6 +2,8 @@
     // a variable that can be used from outside
     // of the component. in this case, the App 
     // component
+    import {fly, fade, scale, slide} from "svelte/transition";
+	  import {flip} from "svelte/animate";
     export let userName;
     export let userTitle;
     export let userDesc;
@@ -18,15 +20,15 @@
 .nation{
     max-width: 50px;
     max-height: 50px;
-    position: absolute;
-    top: 10%;
-    right: 10%;
+    position: relative;
+    top: 0;
+    right: -80%;
 }
-.contact-card:hover{
+/* .contact-card:hover{
     transform: rotate(1deg);
     transition: transform .5s;
     cursor: pointer;
-}
+} */
 
   header {
     display: flex;
@@ -78,7 +80,7 @@
     padding: 1rem;
   }
 </style>
-<div class="contact-card">
+<div in:fly={{x:300}} class="contact-card">
     <header>
     <!-- you can dynamically alter classes with ternary operator 
         in curly braces-->
@@ -88,7 +90,7 @@
         </div>
         <div class="user-data">
             <h1>{userName}</h1>
-            <span class="nation"><img src="{nationImg}" alt="nation"></span>
+            <span class="nation">nation: {nationImg}</span>
             <h2><strong>{userTitle}</strong></h2>
         </div>
         
