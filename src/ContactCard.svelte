@@ -2,8 +2,7 @@
     // a variable that can be used from outside
     // of the component. in this case, the App 
     // component
-    import {fly, fade, scale, slide} from "svelte/transition";
-	  import {flip} from "svelte/animate";
+   
     export let userName;
     export let userTitle;
     export let userDesc;
@@ -13,7 +12,8 @@
 <style>
 .contact-card {
     box-shadow: 0 2px 8px rgba(0, 0, 0, 0.26);
-    max-width: 30rem;
+    width: 30rem;
+
     border-radius: 5px;
     margin: 1rem 0;
   }
@@ -80,7 +80,7 @@
     padding: 1rem;
   }
 </style>
-<div in:fly={{x:300}} class="contact-card">
+<div class="contact-card">
     <header>
     <!-- you can dynamically alter classes with ternary operator 
         in curly braces-->

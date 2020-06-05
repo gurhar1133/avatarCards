@@ -23,27 +23,55 @@ button:hover{
     background-color: #ccc;
     cursor: pointer;
 }
+.edit-form{
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    margin-top: 2rem;
+    margin-bottom: 2rem;
+    margin-left: 3rem;
+    margin-right: 3rem;
+}
+.field{
+    margin: .5rem .5rem;
+}
 </style>
+<div class="edit-form">
 
-Choose Nation:<br>
+<div class="field">
+<label for="name">Name:</label>
+<input id="name" type="text" bind:value="{name}">
+</div>
+
+<div class="field">
+<label for="selectNation"> Choose Nation: </label>
 <select name="nation"  id="selectNation" bind:value={icon}>
 	<option value="fire">Fire</option>
 	<option value="water">Water</option>
 	<option value="air">Air</option>
 	<option value="earth">Earth</option>
 </select>
-<br>Name:<br>	
-<input type="text" bind:value="{name}">
-<br>
-Title:<br>
-<input type="text" bind:value="{title}">
-<br>
-Short bio:<br>
-<textarea rows="3" bind:value="{description}"></textarea>
-<br>
+</div>
 
-<label for="imageURL">Image url</label>
-<input name="imageURL" type="text" bind:value="{defaultImage}">
-<br>
 
-<button on:click="{addNewCard}">Save</button>
+<div class="field">
+    <label for="title">Title:</label>
+    <input id="title" type="text" bind:value="{title}">
+</div>
+
+<div class="field"> 
+    <label for="bio">Short Bio:</label>
+    <textarea id="bio" rows="4" cols="40" bind:value="{description}"></textarea>
+</div>
+
+<div class="field">
+    <label for="imageURL">Image url</label>
+    <input name="imageURL" type="text" bind:value="{defaultImage}">
+</div>
+
+
+<div class="field">
+    <button on:click="{addNewCard}">Save</button>
+</div>
+
+
+</div>

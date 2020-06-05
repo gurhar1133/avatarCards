@@ -6,12 +6,15 @@
 	 let newCard = {};
 	 let allCards = [];
 	 let addMode = false;
+	 let cardsPresent = false;
 	export let nations;
 	let icon;
 	import {fly, fade, scale, slide} from "svelte/transition";
+	import {customStore} from './CardStore.js';
 	import {flip} from "svelte/animate";
 	import ContactCard from './ContactCard.svelte';
 	import EditCard from "./EditCard.svelte";
+	import CardGrid from "./CardGrid.svelte";
 	// $: variables dynamically update
 	const log = (varName)=>{
 		console.log(varName);
@@ -32,10 +35,12 @@
 	};
 
 	function addToGrid(event){
+		cardsPresent = true;
 		console.log("addding card to grid");
-		newCard = {...event.detail};
-		allCards = [newCard, ...allCards];
-		console.log(allCards);
+		newCard = {...event.detail, id: Math.random().toString()};
+		console.log(newCard);
+		customStore.addCard(newCard);
+		//console.log(allCards);
 	}
 
 </script>
@@ -50,14 +55,12 @@
 		color: rgb(167, 54, 167);
 	}
 	.contact-div{
-		position: absolute;
+		/* position: absolute;
     	top: 15%;
-    	right: 7%;
+    	right: 7%; */
 	}
 	.collection-head{
-		position: absolute;
-		top: 5%;
-		right: 5%;
+		text-align: center;
 	}
 </style>
 
@@ -85,27 +88,18 @@
 			/>
 	</div>
 {/if}
-{#if (allCards.length > 0)}
+{#if cardsPresent }
 	<h2 class="collection-head">Your collection</h2>
-{/if}
+
 <div class="contact-div">
 	<!---->
-	{#if (allCards.length > 0)}
-		{#each allCards as card (Math.random().toString())}
-			
-			
-			<ContactCard 
-					image="{card.image}" 
-					userName="{card.name}" 
-					userTitle="{card.title}" 
-					userDesc="{card.description}"
-					nationImg="{card.icon}"/>
-					
-		{/each}
-	{:else}
-		<p>No cards yet. Add a card to the collection</p>
-	{/if}
+	
+		<CardGrid cardList="{$customStore}"/>
+	
+		<!-- <p>No cards yet. Add a card to the collection</p>
+	 -->
 </div>
+{/if}
 
 
 
