@@ -13,9 +13,17 @@
 .contact-card {
     box-shadow: 0 2px 8px rgba(0, 0, 0, 0.26);
     width: 30rem;
-
+    background: #eee;
     border-radius: 5px;
-    margin: 1rem 0;
+    margin-left: 1rem;
+    margin-right: 1rem;
+    margin-bottom: -10rem;
+    
+  }
+  .contact-card:hover{
+    cursor:pointer;
+    z-index: 100;
+    background: #fff;
   }
 .nation{
     max-width: 50px;
@@ -80,7 +88,7 @@
     padding: 1rem;
   }
 </style>
-<div class="contact-card">
+<div class="contact-card" on:click>
     <header>
     <!-- you can dynamically alter classes with ternary operator 
         in curly braces-->
@@ -89,8 +97,9 @@
              <img src="{image}" alt="{userName}"/>
         </div>
         <div class="user-data">
+          <span class="nation">nation: {nationImg}</span>
             <h1>{userName}</h1>
-            <span class="nation">nation: {nationImg}</span>
+            
             <h2><strong>{userTitle}</strong></h2>
         </div>
         

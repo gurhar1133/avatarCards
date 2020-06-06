@@ -15,11 +15,13 @@
 	import ContactCard from './ContactCard.svelte';
 	import EditCard from "./EditCard.svelte";
 	import CardGrid from "./CardGrid.svelte";
+	import CardModal from "./CardModal.svelte";
 	// $: variables dynamically update
 	const log = (varName)=>{
 		console.log(varName);
 	};
-
+	let pickedCard;
+	let displayModal = false;
 
 
 	//$: Uname = name.toUpperCase();
@@ -42,7 +44,11 @@
 		customStore.addCard(newCard);
 		//console.log(allCards);
 	}
-
+	function cardPicked(event){
+		console.log(event.detail);
+		pickedCard = event.detail;
+		displayModal = true;
+	}
 </script>
 
 <style>
@@ -61,10 +67,14 @@
 	}
 	.collection-head{
 		text-align: center;
+		margin-bottom: 4rem;
 	}
 </style>
 
-
+{#if displayModal}
+	<CardModal cardObj="{pickedCard}"
+				on:closeModal={()=>{displayModal=false;}}/>
+{/if}
 
 <h3>Avatar card builder</h3>
 
@@ -94,7 +104,8 @@
 <div class="contact-div">
 	<!---->
 	
-		<CardGrid cardList="{$customStore}"/>
+		<CardGrid cardList="{$customStore}"
+				on:cardClicked={cardPicked}/>
 	
 		<!-- <p>No cards yet. Add a card to the collection</p>
 	 -->

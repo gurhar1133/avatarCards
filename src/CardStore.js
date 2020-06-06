@@ -7,7 +7,7 @@ export const customStore = {
     subscribe: cardStore.subscribe,
     addCard:(newCardObj)=>{
         cardStore.update(cards=>{
-           return [newCardObj, ...cards];
+           return [...cards, newCardObj];
         })
     },
     // toggleFavorite: (id)=>{

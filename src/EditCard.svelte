@@ -16,11 +16,15 @@
             icon: icon
 		}
         dispatch("addCard", newCard);
+        name = "";
+        title = "";
+        description = "";
+        defaultImage = "";
     }
 </script>
 <style>
 button:hover{
-    background-color: #ccc;
+    background-color: rgb(167, 54, 167);
     cursor: pointer;
 }
 .edit-form{
