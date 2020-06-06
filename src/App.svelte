@@ -6,7 +6,7 @@
 	 let newCard = {};
 	 let allCards = [];
 	 let addMode = false;
-	 let cardsPresent = false;
+	 let cardsPresent = true;
 	export let nations;
 	let icon;
 	import {fly, fade, scale, slide} from "svelte/transition";

@@ -8,6 +8,9 @@
     }
 </script>
 <style>
+    button{
+        margin: 1rem .2rem;
+    }
     .modal-backdrop{
         position: fixed;
         top: 0;
@@ -34,14 +37,15 @@
         position: absolute;
         top: 20%;
         bottom: 20%;
-        left: 20%;
+        left: 5%;
+        right: 5%;
         
     }
 </style>
 
 <div class="modal-backdrop">
     <div class="modal">
-    <button on:click={close}>Close</button>
+    
         <div class="card-holder">
             <ContactCard 
 		        image="{cardObj.image}" 
@@ -51,5 +55,8 @@
 		        nationImg="{cardObj.icon}"
                 />
         </div>
+        <button on:click={close}>Close</button>
+        <button class="full">Delete</button>
+        <button>Shuffle to top</button>
     </div>
 </div>

@@ -55,3 +55,15 @@ button:active {
   color: white;
   box-shadow: 1px 1px 8px rgba(77, 51, 51, 0.26);
 }
+.full{
+  background: rgb(167, 54, 167);
+  border-color: rgb(167, 54, 167);
+  color: white;
+  box-shadow: 1px 1px 8px rgba(77, 51, 51, 0.26);
+}
+.full:hover{
+  background: white;
+  border-color: rgb(167, 54, 167);
+  color: rgb(167, 54, 167);
+  box-shadow: 1px 1px 8px rgba(77, 51, 51, 0.26);
+}

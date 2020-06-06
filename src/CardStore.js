@@ -1,6 +1,22 @@
 import {writable} from "svelte/store";
 const cardStore = writable([
-    
+    {
+        image: "https://vignette.wikia.nocookie.net/avatar/images/c/c1/Iroh_smiling.png/revision/latest/top-crop/width/360/height/360?cb=20130626131914",
+        name: "Iroh", 
+        title: "General",
+        description: "The Dragon of the West, and expert tea maker", 
+        icon: "fire",
+        id: "0.2508293862680213"
+    },
+    {
+        image: "https://upload.wikimedia.org/wikipedia/en/thumb/8/86/Avatar_Aang.png/220px-Avatar_Aang.png",
+        name: "Aang", 
+        title: "Avatar",
+        description: "The last airbender", 
+        icon: "air",
+        id: "0.25082938626"
+    }
+
 ]);
 
 export const customStore = {
