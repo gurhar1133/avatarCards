@@ -1,6 +1,7 @@
 <script>
     import ContactCard from "./ContactCard.svelte";
     import {createEventDispatcher} from "svelte";
+    import {fly} from "svelte/transition";
     export let cardObj;
     const dispatch = createEventDispatcher();
     function close(){
@@ -44,7 +45,7 @@
 </style>
 
 <div class="modal-backdrop">
-    <div class="modal">
+    <div transition:fly="{{duration: 500, y:800}}" class="modal">
     
         <div class="card-holder">
             <ContactCard 
